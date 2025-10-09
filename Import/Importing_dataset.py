@@ -12,7 +12,7 @@ market_values = np.array(data["price"])
 height = np.array(data["height"])
 
 
-plt.scatter(ages, market_values)
+plt.bar(ages,  market_values, color = "red")
 
 plt.title("Relationship between ages of Bundesliga players and Market Values")
 plt.xlabel("Age")
@@ -20,7 +20,7 @@ plt.ylabel("Market Value")
 
 plt.show()
 
-plt.scatter(height, market_values)
+plt.bar(height, market_values)
 
 plt.title("Relationship between heights of Bundesliga players and Market Values")
 plt.xlabel("Height")
