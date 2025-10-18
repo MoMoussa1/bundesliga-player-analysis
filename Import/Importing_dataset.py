@@ -88,3 +88,37 @@ plt.xlabel("Age")
 plt.ylabel("Market Value (Million euros)")
 
 plt.show()
+
+#H
+#This histogram shows the age distribution of Bundesliga Players
+#It can help us identify how many young players are in the league (looks like 50/514 players are under 20, not too bad)
+#It can tell us if the league favors more young players or older players (favors more younger than older, but majority of ages are in between 25-30 years old; in their prime)
+
+
+plt.hist(ages)
+plt.title("Distribution of Player ages")
+plt.xlabel("Age (years)")
+plt.ylabel("Number of Players")
+plt.show() 
+
+
+#I
+#This pie chart shows the distribution of players by the top 5 nationalities in the league
+#We can see that there is a huge chunk of the pie chart covered by players of German nationality (meaning the league is mostly german player focused)
+#It shows that the league does not favor foreign players
+
+
+nationality_times = data["nationality"].value_counts().head(5) 
+
+
+#value_counts counts the number of players from each nation, head 5 only selects the top 5 nations
+
+
+plt.pie(nationality_times, labels=nationality_times.index)
+
+
+#nationality_times.index shows the nationality, without it we would only see a pie chart with colors, no labels
+
+
+plt.title("Top 5 Nationalities of Bundesliga Players")
+plt.show()
