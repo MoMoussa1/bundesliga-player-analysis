@@ -141,7 +141,28 @@ sns.displot(data, x="price", hue="position", multiple="dodge", bins=3)
 
 sns.displot(data, x="height", hue="position", multiple="dodge", binwidth= 0.05)
 
-data["top_6_clubs"] = data[data["club"].isin(["Bayern Munich", "Bor. Dortmund", "RB Leipzig", "B. Leverkusen", "TSG Hoffenheim", "VfB Stuttgart"])]
-data_top5_age = 
-sns.displot(data, x="age", hue="top_6_clubs", multiple="dodge")
 
+
+
+
+
+
+
+
+#6.1
+#a)
+sns.relplot(data, x="age", y="price", col="foot")  
+
+#b)
+sns.relplot(data, x="age", y="price", hue="position", size="height", col="foot")
+
+#c)
+sns.relplot(data, x="age", y="price", kind="line")
+#it makes sense to use age and price because they are both continuous,
+#and there is a clear relationship between the two.
+#market value goes up around the age of 20 and continues
+#increasing until about the age of 28 where it starts going down.
+#which makes sense because 28 is considered the prime age for athletes
+
+#d)
+sns.barplot(data, x="position", y="price", ci="sd")
